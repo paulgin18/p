@@ -22,7 +22,25 @@
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-	<icon src="res/imc.png" />
+	     <icon density="ldpi" src="www/res/icon/android/imc.png" />
+        <icon density="mdpi" src="www/res/icon/android/imc.png" />
+        <icon density="hdpi" src="www/res/icon/android/imc.png" />
+        <icon density="xhdpi" src="www/res/icon/android/imc.png" />
+        <icon density="xxhdpi" src="www/res/icon/android/imc.png" />
+        <icon density="xxxhdpi" src="www/res/icon/android/imc.png" />
+        <splash density="land-ldpi" src="www/res/screen/android/imc.png" />
+        <splash density="land-mdpi" src="www/res/screen/android/imc.png" />
+        <splash density="land-hdpi" src="www/res/screen/android/imc.png" />
+        <splash density="land-xhdpi" src="www/res/screen/android/imc.png" />
+        <splash density="land-xxhdpi" src="www/res/screen/android/imc.png" />
+        <splash density="land-xxxhdpi" src="www/res/screen/android/imc.png" />
+        <splash density="port-ldpi" src="www/res/screen/android/imc.png" />
+        <splash density="port-mdpi" src="www/res/screen/android/imc.png" />
+        <splash density="port-hdpi" src="www/res/screen/android/imc.png" />
+        <splash density="port-xhdpi" src="www/res/screen/android/imc.png" />
+        <splash density="port-xxhdpi" src="www/res/screen/android/imc.png" />
+        <splash density="port-xxxhdpi" src="www/res/screen/android/imc.png" />
+    </platform>
  
     
     <access origin="*" />
