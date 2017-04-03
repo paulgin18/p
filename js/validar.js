@@ -4,7 +4,7 @@ $(function() {
     $("#contactForm input").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
-            // additional error txtAlturas or events
+        
         },
         submitSuccess: function($form, event) {
             // Prevent spam click and default submit behaviour
@@ -23,7 +23,19 @@ $(function() {
 			
 			
 			$("#divResul").show();
-			if(txtEdad<60){
+		
+            $.ajax({
+                url: "././mail/contact_me.html",
+                type: "POST",
+                data: {
+                    rbtSexo: rbtSexo,
+                    txtPeso: txtPeso,
+                    txtEdad: txtEdad,
+                    txtAltura: txtAltura
+                },
+                cache: false,
+                success: function() {
+						if(txtEdad<60){
 				if (imc<16){
 					color="style='color: #d9534f'";
 				}else if(imc<17){
@@ -95,17 +107,6 @@ $(function() {
 					color="style='color: #d9534f'";
 				}
 			}
-            $.ajax({
-                url: "././mail/contact_me.html",
-                type: "POST",
-                data: {
-                    rbtSexo: rbtSexo,
-                    txtPeso: txtPeso,
-                    txtEdad: txtEdad,
-                    txtAltura: txtAltura
-                },
-                cache: false,
-                success: function() {
                     // Enable button & show success txtAltura
                     $("#btnSubmit").attr("disabled", false);
 					//$('html,body').animate({scrollTop: $('resul').offset().top()}, 'slow');
