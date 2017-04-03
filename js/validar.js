@@ -1,5 +1,6 @@
-$(function() {
 
+$(function() {
+	
     $("#contactForm input").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
@@ -83,7 +84,7 @@ $(function() {
 '<div id="pgTexto" style="height:10px;width:310px;position:absolute; font-size:9px; color:#5cb85c">'+
 '<center><img class="img-responsive" width="10" height="10" src="img/trian.jpg" alt="">Ideal</center></div></div>';
 	//height: 10px; width: 314px; position:0px ; font-size: 10px; left: 100px;
-	por='-61px';	
+	por='-51px';	
 				if(imc<=23){
 						color="style='color: #d9534f'";
 				}else if(imc<28){
