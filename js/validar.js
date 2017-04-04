@@ -23,19 +23,7 @@ $(function() {
 			
 			
 			$("#divResul").show();
-		
-            $.ajax({
-                url: "././mail/contact_me.html",
-                type: "POST",
-                data: {
-                    rbtSexo: rbtSexo,
-                    txtPeso: txtPeso,
-                    txtEdad: txtEdad,
-                    txtAltura: txtAltura
-                },
-                cache: false,
-                success: function() {
-						if(txtEdad<60){
+			if(txtEdad<60){
 				if (imc<16){
 					color="style='color: #d9534f'";
 				}else if(imc<17){
@@ -63,7 +51,7 @@ $(function() {
 				s=s+"<div class='form-group col-xs-8' style='color:#f2b968'>Obesidad Grado II</div><div class='form-group col-xs-4' style='color: #f2b968'>35 a <40</div><br/>" ;
 				s=s+"<div class='form-group col-xs-8' style='color:#d9534f'>Obesidad Grado III</div><div class='form-group col-xs-4' style='color: #d9534f'>>=40</div><br/>" ;
 				
-				p="<div class='container'>"+
+				p="<div class=''>"+
 					'<div class="progress">'+
 					'<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width:16%"></div>'+
 					'<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" style="width:1%"></div>'+
@@ -73,30 +61,31 @@ $(function() {
 					'<div class="progress-bar progress-bar-info progress-bar-striped active" style="width:5%"></div>'+
 					'<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" style="width:5%"></div>'+
 					'<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width:60%"></div>'+
-					'</div>'+
+				'</div>'+
 				
 '<div id="pgTexto" style="height:10px;width:100%;position:absolute; font-size:9px; color:#5cb85c">'+
 '<center><img class="img-responsive" width="10" height="10" src="img/trian.jpg" alt="">Ideal</center></div></div>';
 	//height: 10px; width: 314px; position:0px ; font-size: 10px; left: 100px;
-	por='-25%';
+	por='-27%';
+	//por='-48%';
 			}else{
 				s="<div class='form-group col-xs-7' style='color:#d9534f'>Delgadez</div><div class='form-group col-xs-5' style='color:#d9534f'><23.0</div><br/>";
 				s=s+"<div class='form-group col-xs-7' style='color:#5cb85c'>Normal</div><div class='form-group col-xs-5' style='color:#5cb85c'>>23 a <28</div><br/>";
 				s=s+"<div class='form-group col-xs-7' style='color:#f2b968'>Sobrepeso</div><div class='form-group col-xs-5' style='color:#f2b968'>>=28 a <32</div><br/>";
 				s=s+"<div class='form-group col-xs-7' style='color:#d9534f'>Obesidad</div><div class='form-group col-xs-5' style='color:#d9534f'>>=32</div><br/>";
 				
-				p="<div class='container'>"+
+				p="<div class=''>"+
 					'<div class="progress">'+
 					'<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width:23%"></div>'+
 					'<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style="width:4%"></div>'+
-					'<div class="progress-bar progress-bar-warning progress-bar-striped active" style="width:5%"></div>'+
-					'<div class="progress-bar progress-bar-danger progress-bar-striped active" style="width:68%"></div>'+
-					'</div>'+
+					'<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar"style="width:5%"></div>'+
+					'<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"  style="width:68%"></div>'+
+				'</div>'+
 				
 '<div id="pgTexto" style="height:10px;width:100%;position:absolute; font-size:9px; color:#5cb85c">'+
 '<center><img class="img-responsive" width="10" height="10" src="img/trian.jpg" alt="">Ideal</center></div></div>';
 	//height: 10px; width: 314px; position:0px ; font-size: 10px; left: 100px;
-	por='-22.1px';	
+	por='-24%';
 				if(imc<=23){
 						color="style='color: #d9534f'";
 				}else if(imc<28){
@@ -107,6 +96,17 @@ $(function() {
 					color="style='color: #d9534f'";
 				}
 			}
+            $.ajax({
+                url: "././mail/contact_me.html",
+                type: "POST",
+                data: {
+                    rbtSexo: rbtSexo,
+                    txtPeso: txtPeso,
+                    txtEdad: txtEdad,
+                    txtAltura: txtAltura
+                },
+                cache: false,
+                success: function() {
                     // Enable button & show success txtAltura
                     $("#btnSubmit").attr("disabled", false);
 					//$('html,body').animate({scrollTop: $('resul').offset().top()}, 'slow');
