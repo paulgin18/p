@@ -6,52 +6,50 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Aplicacion para calcular el indice de masa corporal - IMC">
+    <meta name="author" content="GERENCIA REGIONAL DE SALUD;">
+	<meta name="keywords" content="IMC, Indice de masa corporal, Geresa, Salud Regiona lamabyeqye"/>
 
     <title>CSI- GERESA LAMABYEQUE</title>
 
-    <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Theme CSS -->
     <link href="css/freelancer.min.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,500,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+  
+<style type="text/css">
+@media screen and (min-width:600px) and (max-width:800px) {
+header .container{padding-top:95px} 
+</style>
+<style type="text/css">
+@media screen and (min-width:300px) and (max-width:600px) {
+header .container{padding-top:65px} 
+</style>
+<style type="text/css">
+.form-control
+</style>
 </head>
-
 <body id="page-top" class="index">
-
-
    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">           
             <div class="navbar-header page-scroll">
-                <img class="img-responsive" width="960" height="580" src="img/geresa.png" alt="">
+                <img class="img-responsive" width="1283" height="149" src="img/geresa.png" alt="">
             </div>
         </div>
-        <!-- /.container-fluid -->
     </nav>
-    <!-- Header -->
+
     <header>
         <div class="container" id="maincontent" tabindex="-1">
             <div class="row">
                 <div class="col-lg-12">
-                  
+               		
                     <div class="intro-text">
+					
                     
-                        <h4>VALORACION NUTRICIONAL  IMC</h4>
+
+                        <h4>VALORACION NUTRICIONAL IMC</h4>
+						
+						
                     </div>
                 </div>
             </div>
@@ -108,6 +106,7 @@
                                 <p class=""><h5>KG</h5></p>
 							 </div>
                         </div>
+
                       <div class="form-group col-xs-2" style=" margin: 5px 10px auto;" >
                                 <label for="altura">Altura</label>
                             </div>
@@ -132,11 +131,75 @@
 							<div id="divResul"></div>
 							<div id="divView"></div>
 							<div id="success"></div>
-							<p></p>
+							<h4 id='msj'></h4>
 					</div>
+					
+			
+ <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="color:#337ab7" >Recomendaciones</h4>
+        </div>
+        <div class="modal-body">
+    <p id='divR1'>
+        Acudir al médico para que identifique si existe alguna enfermedad, tales como: psíquicos (depresión, trastornos de memoria o confusión, manía, alcoholismo, tabaquismo), sensoriales (disminución del sentido del gusto, visión, auditivo), físicos (movilidad, astenia), sociales (soledad, malos hábitos dietéticos, maltrato), bucales (falta de piezas dentarias), digestivos (malabsorción), hipercatabólicas (cáncer, diabetes), entre otras.
+</p>
+<p id='divR2'>
+        Mantener este valor de IMC, que significa sostener el peso de manera constante
+Las personas adultas mayores con un IMC de > 23 a < 28, son clasificadas con valoración nutricional
+“normal”, y es el IMC que debe tener y mantener esta población, de manera constante.
+
+</p>
+<p id='divR3'>
+        Necesita atención especializada y diferenciada para descartar alguna enfermedad asociada al estado nutricional
+Las personas adultas mayores con un IMC de ≥ 28 a < 32, son clasificadas con valoración nutricional
+de “sobrepeso”, que es una malnutrición por exceso, caracterizado por la ingesta elevada de calorías,
+malos hábitos alimentarios, escasa actividad física, entre otros
+
+</p>
+<p id='divR4'>
+       Las personas adultas mayores con un IMC ≥ 32, son clasificadas con valoración nutricional de
+“obesidad”, que es una malnutrición por exceso, e indica un mayor riesgo de sufrir de enfermedades
+cerebrovasculares, enfermedades cardiovasculares, cáncer de mamas, diabetes mellitus tipo
+2 no insulinodependiente, enfermedad por reflujo gastroesofágico, osteoartrosis, y pérdida de la
+movilidad.
+
+</p>
+<p id='divR5'>
+        Acudir a consulta médica para descartar alguna enfermedad asociada al estado nutricional.
+Las personas adultas con un IMC < 25 (normal) Las personas adultas con valores de IMC entre 18,5 y 24,9 son clasificadas con valoración nutricional de “normal”. En este rango el grupo poblacional presenta el más bajo riesgo de morbilidad y mortalidad. 
+
+</p >
+
+          <p id='divR6'>Mantener este valor de IMC, que significa sostener el peso de manera constante.
+Las personas adultas con valores de IMC entre 18,5 y 24,9 son clasificadas con valoración nutricional de “normal”. En este rango el grupo poblacional presenta el más bajo riesgo de morbilidad y mortalidad
+ </p>
+
+ <p id='divR7'>Acudir a consulta médica, psicológica y nutricional para evaluación y descarte de enfermedades asociadas al estado nutricional.
+Las personas adultas con un IMC mayor o igual a 25 y menor de 30, son clasificadas con valoración nutricional de “sobrepeso”, lo cual significa que existe riesgo de comorbilidad, principalmente de las enfermedades crónicas no transmisibles como: diabetes mellitus tipo 2, enfermedades cardiovasculares incluida la hipertensión arterial, enfermedad coronaria, cáncer, entre otras. 
+</p>
+    
+
+ <p id='divR8'>Acudir a consulta médica, psicológica y nutricional para evaluación y descarte de enfermedades asociadas al estado nutricional, procurar la pérdida moderada de peso para disminuir el riesgo de comorbilidad y recuperar la salud
+Las personas adultas con valores de IMC mayor o igual a 30 son clasificadas con valoración nutricional de “obesidad”, lo cual significa que existe alto riesgo de comorbilidad, principalmente de las enfermedades crónicas no transmisibles como: diabetes mellitus tipo 2, enfermedades cardiovasculares incluida la hipertensión arterial, enfermedad coronaria, cáncer, entre otras. 
+
+</p>
+
+                <center><img class="img-responsive" width="430" height="430" src="img/cintura.jpg" id="imgH"  border="5"   alt=""></a>  </center>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
                     </form>  
             </div>
         </div>
+		
     </section>
     <footer class="text-center" >
 	<br/>

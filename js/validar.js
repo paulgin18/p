@@ -4,42 +4,48 @@ $(function() {
     $("#contactForm input").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
-        
+  
         },
         submitSuccess: function($form, event) {
-            // Prevent spam click and default submit behaviour
+            
             $("#btnSubmit").attr("disabled", true);
             event.preventDefault();
             
-            // get values from FORM
+            
             var rbtSexo = $("input#rbtSexo").val();
             var txtEdad = $("input#txtEdad").val();
             var txtPeso = $("input#txtPeso").val();
             var txtAltura = $("input#txtAltura").val();
 			var imc=txtPeso/Math.pow(txtAltura,2);
-			imc= Math.round(imc*100)/100.
-			var s="", p="", por=0, color="";
-			
-			
+			imc= Math.round(imc*100)/100;
+			var s="", p="", por=0, color="", texto="";
 			
 			$("#divResul").show();
 			if(txtEdad<60){
 				if (imc<16){
 					color="style='color: #d9534f'";
+					texto="Delgadez Grado III";
 				}else if(imc<17){
 						color="style='color: #f2b968'";
+						texto="Delgadez Grado II";
 				}else if(imc<18.5){
 						color="style='color: #73c9e3'";
+						texto="Delgadez Grado I";
 				}else if(imc<25){
 					color="style='color: #5cb85c'";
+					texto="Normal";
 				}else if(imc<30){
 					color="style='color: #337ab7'";
+					texto="Sobrepeso";
 				}else if(imc<35){
 					color="style='color: #73c9e3'";
+					texto="Obesidad Grado I";
 				}else if(imc<40){
 					color="style='color: #f2b968'";
+					texto="Obesidad Grado II";
 				}else if(imc>=40){
 					color="style='color: #d9534f'";
+					texto="Obesidad Grado III";
 				}
 				
 				s="<div class='form-group col-xs-8' style='color: #d9534f'>Delgadez Grado III</div><div class='form-group col-xs-4' style='color: #d9534f'><16</div> <br/>" ;
@@ -88,12 +94,16 @@ $(function() {
 	por='-24%';
 				if(imc<=23){
 						color="style='color: #d9534f'";
+						texto="Delgadez";
 				}else if(imc<28){
 						color="style='color: #5cb85c'";
+						texto="Normal";
 				}else if(imc<32){
 					color="style='color: #f2b968'";
+					texto="Sobrepeso";
 				}else if(imc>=32){
 					color="style='color: #d9534f'";
+					texto="Obesidad";
 				}
 			}
             $.ajax({
@@ -107,33 +117,32 @@ $(function() {
                 },
                 cache: false,
                 success: function() {
-                    // Enable button & show success txtAltura
+                    
                     $("#btnSubmit").attr("disabled", false);
-					//$('html,body').animate({scrollTop: $('resul').offset().top()}, 'slow');
+					
 					$('#divResul').html("<div class=''><center><h3>RESULTADO</h3></center>"+
-					"<center><h2 "+color+">"+imc+"</h2></center><hr/>"+
+					"<center><h2 "+color+">"+imc+" <br/></h2></center>"+
+					'<center> <div class="form-group col-xs-6"><h4 '+color+'>'+texto+
+					'</h4></div> <div class="form-group col-xs-6"><h5>Recomendaciones<input type="button" class="btn-primary" data-toggle="modal" value="Click" data-target="#myModal"></h5></div></center><hr/><br>'+
 					p+
 					'</div><br/>');
                     $('#success').html("<div class='alert alert-success' id='resul' name='resul'>");
-                    //$('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                      //  .append("</button>");
-					      
+                          
                     $('#success > .alert-success').append(
 					"<script type='text/javascript'>$('#pgTexto').animate({left: '"+por+"'}, 'slow');</script><strong>"+s+"</strong>");
-                    $('#success > .alert-success')
-                        .append('</div><div id="re"></div>');
+                    $('#success > .alert-success').append('</div><div id="re"></div>');
 						$("#divView").attr("tabindex",-1).focus();
-                    //clear all fields
-                    //$('#contactForm').trigger("reset");
+						$("#msj").html('<center style="color: #fd0404">ACUDE A TU ESTABLECIMIENTO DE SALUD PARA MAYOR INFORMACION</center>');
+                    
                 },
                 error: function() {
-                    // Fail txtAltura
+                    
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                       .append("</button>");
                     $('#success > .alert-danger').append("<strong>Error:,4 los datos");
                     $('#success > .alert-danger').append('</div>');
-                    //clear all fields
+                    
                     $('#contactForm').trigger("reset");
                 },
             });
@@ -149,7 +158,7 @@ $(function() {
     });
 });
 
-// When clicking on Full hide fail/success boxes
+
 $('#rbtSexo').focus(function() {
     $('#success').html('');
 });
