@@ -1,5 +1,13 @@
 
 $(function() {
+	$("#divR1").hide();
+	$("#divR2").hide();
+	$("#divR3").hide();
+	$("#divR4").hide();
+	$("#divR5").hide();
+	$("#divR6").hide();
+	$("#divR7").hide();
+	$("#divR8").hide();
 	
     $("#contactForm input").jqBootstrapValidation({
         preventSubmit: true,
@@ -19,33 +27,105 @@ $(function() {
 			var imc=txtPeso/Math.pow(txtAltura,2);
 			imc= Math.round(imc*100)/100;
 			var s="", p="", por=0, color="", texto="";
-			
+			var pp=0;
+if(imc>=50&& imc<=100){
+	pp=(48*imc/50)-50;
+}else if(imc>100){
+	pp=47.5;
+}else{
+	
+	pp=(-imc+49.99)*(-1);
+}
 			$("#divResul").show();
 			if(txtEdad<60){
 				if (imc<16){
 					color="style='color: #d9534f'";
 					texto="Delgadez Grado III";
+					$("#divR1").show();
+	$("#divR2").hide();
+	$("#divR3").hide();
+	$("#divR4").hide();
+	$("#divR5").hide();
+	$("#divR6").hide();
+	$("#divR7").hide();
+	$("#divR8").hide();
 				}else if(imc<17){
 						color="style='color: #f2b968'";
 						texto="Delgadez Grado II";
+						$("#divR1").show();
+	$("#divR2").hide();
+	$("#divR3").hide();
+	$("#divR4").hide();
+	$("#divR5").hide();
+	$("#divR6").hide();
+	$("#divR7").hide();
+	$("#divR8").hide();
 				}else if(imc<18.5){
 						color="style='color: #73c9e3'";
 						texto="Delgadez Grado I";
+						$("#divR1").show();
+	$("#divR2").hide();
+	$("#divR3").hide();
+	$("#divR4").hide();
+	$("#divR5").hide();
+	$("#divR6").hide();
+	$("#divR7").hide();
+	$("#divR8").hide();
 				}else if(imc<25){
 					color="style='color: #5cb85c'";
 					texto="Normal";
+					$("#divR1").hide();
+	$("#divR2").show();
+	$("#divR3").hide();
+	$("#divR4").hide();
+	$("#divR5").hide();
+	$("#divR6").hide();
+	$("#divR7").hide();
+	$("#divR8").hide();
 				}else if(imc<30){
 					color="style='color: #337ab7'";
 					texto="Sobrepeso";
+					$("#divR1").hide();
+	$("#divR2").hide();
+	$("#divR3").show();
+	$("#divR4").hide();
+	$("#divR5").hide();
+	$("#divR6").hide();
+	$("#divR7").hide();
+	$("#divR8").hide();
 				}else if(imc<35){
 					color="style='color: #73c9e3'";
 					texto="Obesidad Grado I";
+					$("#divR1").hide();
+	$("#divR2").hide();
+	$("#divR3").hide();
+	$("#divR4").show();
+	$("#divR5").hide();
+	$("#divR6").hide();
+	$("#divR7").hide();
+	$("#divR8").hide();
 				}else if(imc<40){
 					color="style='color: #f2b968'";
 					texto="Obesidad Grado II";
+					$("#divR1").hide();
+	$("#divR2").hide();
+	$("#divR3").hide();
+	$("#divR4").show();
+	$("#divR5").hide();
+	$("#divR6").hide();
+	$("#divR7").hide();
+	$("#divR8").hide();
 				}else if(imc>=40){
 					color="style='color: #d9534f'";
 					texto="Obesidad Grado III";
+					$("#divR1").hide();
+	$("#divR2").hide();
+	$("#divR3").hide();
+	$("#divR4").show();
+	$("#divR5").hide();
+	$("#divR6").hide();
+	$("#divR7").hide();
+	$("#divR8").hide();
 				}
 				
 				s="<div class='form-group col-xs-8' style='color: #d9534f'>Delgadez Grado III</div><div class='form-group col-xs-4' style='color: #d9534f'><16</div> <br/>" ;
@@ -59,20 +139,20 @@ $(function() {
 				
 				p="<div class=''>"+
 					'<div class="progress">'+
-					'<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width:16%"></div>'+
-					'<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" style="width:1%"></div>'+
+					'<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width:14.9%"></div>'+
+					'<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" style="width:1.2%"></div>'+
 					'<div class="progress-bar progress-bar-info progress-bar-striped active" style="width:1.5%"></div>'+
-					'<div class="progress-bar progress-bar-success progress-bar-striped active" style="width:6.5%"></div>'+
+					'<div class="progress-bar progress-bar-success progress-bar-striped active" style="width:6.9%"></div>'+
 					'<div class="progress-bar progress-bar" role="progressbar active" style="width:5%"></div>'+
 					'<div class="progress-bar progress-bar-info progress-bar-striped active" style="width:5%"></div>'+
-					'<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" style="width:5%"></div>'+
-					'<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width:60%"></div>'+
+					'<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" style="width:5.3%"></div>'+
+					'<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width:60.2%"></div>'+
 				'</div>'+
 				
 '<div id="pgTexto" style="height:10px;width:100%;position:absolute; font-size:9px; color:#5cb85c">'+
-'<center><img class="img-responsive" width="10" height="10" src="img/trian.jpg" alt="">Ideal</center></div></div>';
+'<center><img class="img-responsive" width="10" height="10" src="img/trian.jpg" alt="">Usted</center></div></div>';
 	//height: 10px; width: 314px; position:0px ; font-size: 10px; left: 100px;
-	por='-27%';
+	por=pp+'%';
 	//por='-48%';
 			}else{
 				s="<div class='form-group col-xs-7' style='color:#d9534f'>Delgadez</div><div class='form-group col-xs-5' style='color:#d9534f'><23.0</div><br/>";
@@ -82,28 +162,61 @@ $(function() {
 				
 				p="<div class=''>"+
 					'<div class="progress">'+
-					'<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width:23%"></div>'+
-					'<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style="width:4%"></div>'+
-					'<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar"style="width:5%"></div>'+
-					'<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"  style="width:68%"></div>'+
+					'<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width:22.5%"></div>'+
+					'<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style="width:5.2%"></div>'+
+					'<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar"style="width:4.2%"></div>'+
+					'<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"  style="width:68.1%"></div>'+
 				'</div>'+
 				
 '<div id="pgTexto" style="height:10px;width:100%;position:absolute; font-size:9px; color:#5cb85c">'+
-'<center><img class="img-responsive" width="10" height="10" src="img/trian.jpg" alt="">Ideal</center></div></div>';
+'<center><img class="img-responsive" width="10" height="10" src="img/trian.jpg" alt="">Usted</center></div></div>';
 	//height: 10px; width: 314px; position:0px ; font-size: 10px; left: 100px;
-	por='-24%';
+	por=pp+'%';
+	
 				if(imc<=23){
 						color="style='color: #d9534f'";
 						texto="Delgadez";
+						$("#divR1").hide();
+	$("#divR2").hide();
+	$("#divR3").hide();
+	$("#divR4").hide();
+	$("#divR5").show();
+	$("#divR6").hide();
+	$("#divR7").hide();
+	$("#divR8").hide();
 				}else if(imc<28){
 						color="style='color: #5cb85c'";
 						texto="Normal";
+						$("#divR1").hide();
+	$("#divR2").hide();
+	$("#divR3").hide();
+	$("#divR4").hide();
+	$("#divR5").hide();
+	$("#divR6").show();
+	$("#divR7").hide();
+	$("#divR8").hide();
 				}else if(imc<32){
 					color="style='color: #f2b968'";
 					texto="Sobrepeso";
+					$("#divR1").hide();
+	$("#divR2").hide();
+	$("#divR3").hide();
+	$("#divR4").hide();
+	$("#divR5").hide();
+	$("#divR6").hide();
+	$("#divR7").show();
+	$("#divR8").hide();
 				}else if(imc>=32){
 					color="style='color: #d9534f'";
 					texto="Obesidad";
+					$("#divR1").hide();
+	$("#divR2").hide();
+	$("#divR3").hide();
+	$("#divR4").hide();
+	$("#divR5").hide();
+	$("#divR6").hide();
+	$("#divR7").hide();
+	$("#divR8").show();
 				}
 			}
             $.ajax({
@@ -121,9 +234,8 @@ $(function() {
                     $("#btnSubmit").attr("disabled", false);
 					
 					$('#divResul').html("<div class=''><center><h3>RESULTADO</h3></center>"+
-					"<center><h2 "+color+">"+imc+" <br/></h2></center>"+
-					'<center> <div class="form-group col-xs-6"><h4 '+color+'>'+texto+
-					'</h4></div> <div class="form-group col-xs-6"><h5>Recomendaciones<input type="button" class="btn-primary" data-toggle="modal" value="Click" data-target="#myModal"></h5></div></center><hr/><br>'+
+					"<center><h2 "+color+">"+imc+"<font size=4>(" +texto+")</font></h2><br/></center>"+
+					'<center><h4>Recomendaciones<input type="button" class="btn-primary" data-toggle="modal" value="Click" data-target="#myModal"></h5></center><hr/>'+
 					p+
 					'</div><br/>');
                     $('#success').html("<div class='alert alert-success' id='resul' name='resul'>");
